@@ -29,6 +29,8 @@ Once the Save button is clicked, popup window will close and changes will be ref
 
 Admin user can create and make adjustments to an existing event by using this screen:
 
+<img src="https://github.com/yzhou77/NGO-Project/blob/master/images/Picture2.png?raw=true" width="250">
+
 When “Add a New Event” or “Edit” button is clicked, a new popup window will appear with these information:
 
 i. Event Name
@@ -64,13 +66,19 @@ All the changes made on this popup will reflect on the grid (table) view.
 
 Admin user will have an option to see the user view, when clicked, it will show a screen like this:
 
+<img src="https://github.com/yzhou77/NGO-Project/blob/master/images/Picture3.png?raw=true" width="250">
+
 Functionality of the above screen is same as user view and explained below.
 
 ### User Module:
 
 When a non-admin user login, he/she will see a screen like this:
 
+<img src="https://github.com/yzhou77/NGO-Project/blob/master/images/Picture4.png?raw=true" width="250">
+
 Above screen will show all the events created in the system. These boxes are clickable and when clicked, it will open a screen like this:
+
+<img src="https://github.com/yzhou77/NGO-Project/blob/master/images/Picture5.png?raw=true" width="250">
 
 When user clicks on Registration button on above screen, he/she will be redirected to a new screen which allows to complete the registration process.
 
