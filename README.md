@@ -12,3 +12,15 @@ Application will have two user roles:
 Admin user(s) are responsible for:
 - Creation of n-numbers of regular users. There will be a default Admin user who will be added directly in the database.
 - Manage events.
+
+Upon login, if the user is an admin user, he/she will see a screen like this:
+
+From above screen, Admin user can manage existing users or create n-number of users. When “Add User” or “Edit” link is clicked, a popup screen will appear with these entry fields:
+o First Name
+o Last Name
+o Email
+o Password
+o Role(Dropdown with two values : Admin & User)
+o Save Button
+o Cancel Button
+Once the Save button is clicked, popup window will close and changes will be reflected on the grid (table).
