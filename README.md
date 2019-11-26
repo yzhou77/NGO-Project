@@ -15,6 +15,8 @@ Admin user(s) are responsible for:
 
 Upon login, if the user is an admin user, he/she will see a screen like this:
 
+<img src="https://github.com/yzhou77/NGO-Project/blob/master/images/Picture1.png?raw=true" width="250">
+
 From above screen, Admin user can manage existing users or create n-number of users. When “Add User” or “Edit” link is clicked, a popup screen will appear with these entry fields:
 - First Name
 - Last Name
