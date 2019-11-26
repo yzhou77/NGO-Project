@@ -28,20 +28,35 @@ Once the Save button is clicked, popup window will close and changes will be ref
 Admin user can create and make adjustments to an existing event by using this screen:
 
 When “Add a New Event” or “Edit” button is clicked, a new popup window will appear with these information:
+
 i. Event Name
+
 ii. Event Description(Varchar(200))
+
 iii. Event Category(Dropdown list with Static Options: Conference, Seminar, Presentation
+
 iv. Event Start Date
+
 v. Event End Date
+
 vi. Event Start time
+
 vii. Event End time
+
 viii. Event Location
+
 ix. Allow registration? Boolean T/F: if this is false, end users cannot make a registration.
+
 x. Event Image
+
 xi. Adult Ticket Price
+
 xii. Child Ticket price
+
 xiii. Save button
+
 xiv. Cancel button
+
 
 All the changes made on this popup will reflect on the grid (table) view.
 
@@ -56,17 +71,28 @@ When a non-admin user login, he/she will see a screen like this:
 Above screen will show all the events created in the system. These boxes are clickable and when clicked, it will open a screen like this:
 
 When user clicks on Registration button on above screen, he/she will be redirected to a new screen which allows to complete the registration process.
+
 a. users will be asked to enter these information:
+
   xv. Event Name should appear at the top of this screen.
+  
   xvi. First Name
+  
   xvii. Last Name
+  
   xviii. Email ID
+  
   xix. Contact#
+  
   xx. Address
+  
   xxi. Total Adult Qty
+  
   xxii. Total Child Qty
+  
   xxiii. Next button
 
 b. When user clicks on Next button, we will show the totals prices depending on quantities he/she selected for Adult and Child along with Confirm registration button.
+
 c. When user clicks on this button, redirect to Event registration confirmation screen.
 
