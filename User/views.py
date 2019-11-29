@@ -1,3 +1,18 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .models import User
+from .form import UserForm
 
-# Create your views here.
+def product_list(request):
+    users = User.objects.all()
+    return render(request, 'User/user_list.html', {'products':users})
+
+def user_new(request):
+    if request.method == "POST":
+        form = UserForm(request.POST)
+        if form.is_valid():
+            product = form.save(commit=True)
+            product.save()
+            return redirect('User_list', pk=product.pk)
+    else:
+        form = UserForm()
+        return render(request, 'User/product_edit.html', {'form': form})
