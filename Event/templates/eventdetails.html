@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!DOCTYPE html>
+
+<style>
+.button{
+display:block;
+width:100px;
+height:20px;
+background:#4E9CAF;
+padding:10px;
+text-align:center;
+border-radius:5px;
+color:white;
+font-weight:bold;
+}
+</style>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event detail</title>
+</head>
+<body>
+<h1>Event Registration Detail: {{event.Event_name}}</h1><br>
+ Event name:
+ {{event.Event_name}}<br>
+ Category:
+ {{event.Event_category}}<br>
+ Location:
+ {{event.Event_location}}<br>
+ Start Date & Time:
+ {{event.Event_start_date}}  {{event.Event_start_time}}<br>
+ End Date & Time:
+ {{event.Event_end_date}}  {{event.Event_end_time}}<br>
+ Event Description:
+ {{event.Event_description}}<br>
+ Adult Ticket Prices:
+ {{event.Adult_ticket_price}}<br>
+ Child Ticket Prices:
+ {{event.Child_ticket_price}}<br>
+ Event Image:
+ <img src="{{event.Event_image.url}}" />
+<br><br><br>
+ <a class="button" href="{% url 'event_registration' event.Event_id%}">Registration</a>
+</body>
+</html>
+
+{%  endblock  %}
