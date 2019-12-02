@@ -20,5 +20,6 @@ from django.conf import settings
 
 urlpatterns = [
     url('admin/', admin.site.urls),
-    url('', include('User.urls', namespace='User'))
+    url('', include('User.urls', namespace='User')),
+    url(r'', include('Event.url')),
 ]
