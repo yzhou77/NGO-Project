@@ -2,7 +2,7 @@ from django.conf.urls import url
 from User import views
 
 
-app_name = 'User'
+app_name = 'Myuser'
 
 urlpatterns = [
     #url('', HomePageView.as_view() , name='login'),
