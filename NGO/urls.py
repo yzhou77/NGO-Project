@@ -21,6 +21,7 @@ from User import views
 
 urlpatterns = [
     url('admin/', admin.site.urls),
+<<<<<<< HEAD
     url(r'^login/$', auth_view.LoginView.as_view(template_name = 'registration/login.html'),name='login'),
     url(r'^logout/$', auth_view.LogoutView.as_view(template_name = 'User/logout.html'), name='logout'),
     url(r'^signup/$', views.signup, name='signup'),
@@ -28,4 +29,8 @@ urlpatterns = [
     #url('', include('django.contrib.auth.urls')),
     url('', include('User.urls', namespace='User')),
 
+=======
+    url('', include('User.urls', namespace='User')),
+    url(r'', include('Event.url')),
+>>>>>>> 8630f57b4d2a676d89d68cada492e0d8bafba7e6
 ]

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration details</title>
+</head>
+<body>
+<h1>Event Registration Detail: {{registration.Event_name}}</h1><br>
+ Event name:
+ {{registration.Event_name}}<br>
+ First name:
+ {{registration.First_name}}<br>
+ Last name:
+ {{registration.Last_name}}<br>
+ Email id:
+ {{registration.Email_id}}<br>
+ Contact #:
+ {{registration.Contact}}<br>
+ Address:
+ {{registration.Address}}<br>
+ Total adult qty:
+ {{registration.Total_adult_qty}}<br>
+ Total child qty:
+ {{registration.Total_child_qty}}<br>
+<br>
+</body>
+</html>
+
+{%  endblock  %}
