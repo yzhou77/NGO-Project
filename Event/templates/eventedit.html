@@ -12,8 +12,9 @@
  <body>
  <h1>Add a new event information</h1>
   <form method='post' class="post_form">
+   <table>
   {% csrf_token %}
-  {{ form.as_p }}
+  {{ form.as_table }}</table>
   <button type="submit" class='save button'>save</button>
  </body>
 </html>

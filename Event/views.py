@@ -10,6 +10,7 @@ from django.views.generic import DetailView
 from django.views.generic.edit import CreateView
 
 from Event.models import Event
+from User.models import Myuser
 from Event.models import Registration
 from django.utils import timezone
 from .forms import EventForm
@@ -17,10 +18,12 @@ from .forms import EventForm1
 from .forms import PForm
 from .forms import RForm
 from .forms import RegistrationForm
+from .cart import Cart
 
 def event_list(request):
     events = Event.objects.filter(published_date__lte=timezone.now())
-    return render(request, 'eventlist.html', {'events':events})
+    adminusers = Myuser.objects.filter(role='admin')
+    return render(request, 'eventlist.html', {'events':events,'adminusers':adminusers})
 
 def event_details(request,pk):
 	event = get_object_or_404(Event,pk=pk)
@@ -82,7 +85,17 @@ def event_registration(request,pk):
 			registration.Event_name = event.Event_name
 			registration.published_date=timezone.now()
 			registration.save()
-			return redirect('registration_details',pk=registration.pk)
+			# return redirect('registration_details',pk=registration.pk)
+		return redirect('registration_confirmation', pk=registration.pk,pl=pk)
 	else:
 		form = RegistrationForm()
 		return render(request,'registrationedit.html',{'form':form,'event':event})
+
+def registration_confirmation(request,pk,pl):
+	registration = get_object_or_404(Registration,pk=pk)
+	event = get_object_or_404(Event, pk=pl)
+	return render(request,'registrationconfirmation.html',{'registration':registration,'event':event})
+
+def confirmed(request,pk):
+	event = get_object_or_404(Event, pk=pk)
+	return render(request, 'confirmed.html', {'event': event})

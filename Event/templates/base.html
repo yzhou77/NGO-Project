@@ -16,7 +16,7 @@
     {% endblock %}
 </div>
 <div id="sidebar" style="background-color:#EEEEEE;height:1000px;width:180px;float:left;">
-    {% block sidebar %}<ul><li><a href="{% url 'event_list' %}">User Management</a></li></ul>
+    {% block sidebar %}<ul><li><a href="{% url 'User:user_list' %}">User Management</a></li></ul>
     <ul><li><a href="{% url 'event_list' %}">Event Management</a></li></ul>
     <ul><li><a href="{% url 'user_view' %}">User View</a></li></ul>{% endblock %}
 </div>

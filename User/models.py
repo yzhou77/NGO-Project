@@ -11,5 +11,3 @@ class Myuser(models.Model):
 
     def __str__(self):
         return self.lastName
-
-

@@ -7,8 +7,11 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body><div style="background-color:#EEEEEE;height:50px;width:1200px;">
-    <h1> Event Management <a href="{% url 'event_new' %}"></h1></div><h2>Add a new event</a></h2>
+    {% for u in adminusers %}
+    {% if user.username == u.username %}
+<div class="content"><div style="background-color:#EEEEEE;height:50px;width:1200px;">
+
+ <h1> Event Management <a href="{% url 'event_new' %}"style="float:right"></h1></div><h2>Add a new event</a></h2>
  <br>
      <table border="1">
              <tr>
@@ -31,7 +34,9 @@
  {% endfor %}
              </tr>
 </table>
-</body>
-</html>
+    </div>
 
+</html>
+{% endif %}
+{% endfor %}
 {%  endblock  %}

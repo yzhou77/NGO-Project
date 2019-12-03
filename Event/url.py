@@ -8,7 +8,7 @@ from . import forms
 
 urlpatterns = [
 	# url(r'^showtime/$',views.showdatetime)
-    url(r'^$',views.event_list,name='event_list'),
+    url(r'^$',views.user_view,name='user_view'),
 	url(r'^event/(?P<pk>\d+)$',views.event_details,name='event_details'),
 	url(r'^event/new/$',views.event_new,name='event_new'),
 	url(r'^event/create/$',
@@ -26,4 +26,6 @@ urlpatterns = [
 	url(r'^userview/$',views.user_view,name='user_view'),
     url(r'^login/new/$',views.event_list,name='event_list'),
     url(r'^event/registration/(?P<pk>\d+)$',views.registration_details,name='registration_details'),
+    url(r'^event/registration/(?P<pl>\d+)/(?P<pk>\d+)/confirmation$',views.registration_confirmation,name='registration_confirmation'),
+	url(r'^event/registration/(?P<pk>\d+)/confirmation/confirmed$',views.confirmed,name='confirmed'),
 ]

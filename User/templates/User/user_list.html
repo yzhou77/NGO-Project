@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-{% extends 'User/base.html' %}
+{% extends 'base.html' %}
 {% block content %}
 
-
+    {% for u in adminusers %}
+    {% if user.username == u.username %}
 <div class="content">
-  <h2>User Management</h2>
-    <a href="{% url 'User:user_new' %}" style="float:right"  >Add User</a>
+  <div style="background-color:#EEEEEE;height:50px;width:1200px;">
+    <h1>User Management</h1></div>
+    <h2><a href="{% url 'signup' %}" style="float:right"  >Add User</a></h2>
 
-  <table>
+  <table  border="1">
   <tr>
     <th>First Name</th>
     <th>Last Name</th>
@@ -30,6 +32,7 @@
   </table>
 
 </div>
+{% endif %}
+{% endfor %}
 
-
-{% endblock %}}
+{% endblock %}

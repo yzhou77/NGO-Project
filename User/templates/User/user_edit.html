@@ -1,12 +1,14 @@
-{% extends 'User/base.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
 
 <div class="content">
     <h2>New user</h2>
     <form method="POST" class="user-form">
+        <table>
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form.as_table }}
+            </table>
         <button type="submit" >Save</button>
         <button type="cancel"><a href="{% url 'User:user_list' %}">Cancel</a></button>
 

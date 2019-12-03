@@ -4,7 +4,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
 from datetime import date
-
+from django.core.validators import MinValueValidator, MaxValueValidator
 from django.utils import timezone
 
 
@@ -51,8 +51,10 @@ class Registration(models.Model):
     Email_id = models.CharField(max_length=30,default='')
     Contact = models.CharField(max_length=30,default='')
     Address = models.CharField(max_length=30,default='')
-    Total_adult_qty = models.DecimalField(max_digits=10, decimal_places=0)
-    Total_child_qty = models.DecimalField(max_digits=10, decimal_places=0)
+    Total_adult_qty = models.IntegerField(validators=[MinValueValidator(0),
+                                       MaxValueValidator(5)])
+    Total_child_qty = models.IntegerField(validators=[MinValueValidator(0),
+                                       MaxValueValidator(5)])
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
 
