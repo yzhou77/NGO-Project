@@ -10,12 +10,21 @@
 <body>
 
 <ul>
+    {% if user.is_authenticated %}
+     <li id="login">@{{user.username}}<a href="{% url 'logout'%}"> logout</a> </li>
 
-     <li margin-left: 20x>NGO</li>
+    {% else %}
+     <li><a href="{% url 'login'%}"> login</a> </li>
+    {% endif %}
 
-
-     <li id="login"><a href="">login</a> </li>
 </ul>
+<div class="sidenav">
+  <h2>NGO</h2>
+  <a href="#">User Management</a>
+  <a href="#">Event Management</a>
+  <a href="#">User View</a>
+</div>
+
 
 {% block content %}
 {% endblock %}

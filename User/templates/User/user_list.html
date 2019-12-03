@@ -2,15 +2,11 @@
 {% extends 'User/base.html' %}
 {% block content %}
 
-<div class="sidenav">
-  <a href="#">User Management</a>
-  <a href="#">Event Management</a>
-  <a href="#">User View</a>
-</div>
 
 <div class="content">
   <h2>User Management</h2>
-  <h3 align="right">Add User</h3>
+    <a href="{% url 'User:user_new' %}" style="float:right"  >Add User</a>
+
   <table>
   <tr>
     <th>First Name</th>
@@ -21,14 +17,16 @@
     <th></th>
   </tr>
 
+   {% for obj in users %}
   <tr>
-    <td>lahcen</td>
-    <td>errich</td>
-    <td>$100</td>
-    <td>admin</td>
-    <td>Edit</td>
-    <td>delete</td>
+    <td>{{obj.firstName}}</td>
+    <td>{{obj.lastName}}</td>
+    <td>{{obj.email}}</td>
+    <td>{{obj.role}}</td>
+      <td><a href="{% url 'User:user_edit' pk=obj.pk %}">Edit</a></td>
+    <td><a href="{% url 'User:user_delete' pk=obj.pk %}" onclick="return confirm('Are you sure you want to delete this?')"> delete</a></td>
   </tr>
+   {% endfor %}
   </table>
 
 </div>
