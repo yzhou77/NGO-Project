@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base3.html" %}
 {% block content %}
     {% if form.errors %}
         <p>Your username and password didn't match. Please try again.</p>
@@ -12,7 +12,19 @@
         <p>Please login.</p>
         {% endif %}
     {% endif %}
-
+<style>
+.button{
+display:block;
+width:100px;
+height:20px;
+background:#4E9CAF;
+padding:10px;
+text-align:center;
+border-radius:5px;
+color:white;
+font-weight:bold;
+}
+</style>
     <h2> Personal Information Login </h2>
 
     <form method="post" action="{% url 'login' %}">
@@ -29,4 +41,5 @@
 
         </table>
         <input type="submit" value="login" />
+        <a href="{% url 'signup' %}" class ="button">Signup</a>
 {%  endblock  %}

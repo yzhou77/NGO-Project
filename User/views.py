@@ -21,8 +21,15 @@ def user_new(request):
     if request.method == "POST":
         form = UserForm(request.POST)
         if form.is_valid():
-            user = form.save(commit=True)
-            return HttpResponseRedirect("/user/")
+            form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password')
+            email = form.cleaned_data.get('email')
+            user = form.save()
+            #login(request, user,backend='django.contrib.auth.backends.ModelBackend')
+            users = Myuser.objects.all()
+            User.objects.create_user(username=username, password=raw_password, email=email)
+            return render(request, 'User/user_list.html', {'users':users})
     else:
         form = UserForm()
         return render(request, 'User/user_edit.html', {'form': form})
@@ -87,5 +94,5 @@ def signup(request):
             return render(request, 'User/user_list.html', {'users':users})
     else:
         form = UserForm()
-        return render(request, 'User/user_edit.html', {'form': form})
+        return render(request, 'User/user_edit2.html', {'form': form})
 

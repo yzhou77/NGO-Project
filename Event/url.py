@@ -5,10 +5,11 @@ from django.views.generic import DetailView, ListView, UpdateView
 
 from . import views
 from . import forms
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
 	# url(r'^showtime/$',views.showdatetime)
-    url(r'^$',views.user_view,name='user_view'),
+    url(r'^$',auth_views.LoginView.as_view(template_name='login.html'), name='login'),
 	url(r'^event/(?P<pk>\d+)$',views.event_details,name='event_details'),
 	url(r'^event/new/$',views.event_new,name='event_new'),
 	url(r'^event/create/$',

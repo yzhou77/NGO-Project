@@ -55,8 +55,9 @@ class EventCreate(CreateView):
         return super(EventCreate, self).form_valid(form)
 
 def user_view(request):
-    events = Event.objects.filter(published_date__lte=timezone.now())
-    return render(request, 'userview.html', {'events':events})
+	events = Event.objects.filter(published_date__lte=timezone.now())
+	adminusers = Myuser.objects.filter(role='admin')
+	return render(request, 'userview.html', {'events': events, 'adminusers':adminusers})
 
 def registration(request):
     event = get_object_or_404(Event, pk=pk)
