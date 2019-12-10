@@ -23,6 +23,7 @@ from .cart import Cart
 def event_list(request):
     events = Event.objects.filter(published_date__lte=timezone.now())
     adminusers = Myuser.objects.filter(role='admin')
+    allusers = Myuser.objects.all()
     return render(request, 'eventlist.html', {'events':events,'adminusers':adminusers})
 
 def event_details(request,pk):
@@ -57,7 +58,8 @@ class EventCreate(CreateView):
 def user_view(request):
 	events = Event.objects.filter(published_date__lte=timezone.now())
 	adminusers = Myuser.objects.filter(role='admin')
-	return render(request, 'userview.html', {'events': events, 'adminusers':adminusers})
+	allusers = Myuser.objects.all()
+	return render(request, 'userview.html', {'events': events, 'adminusers':adminusers,'allusers':allusers})
 
 def registration(request):
     event = get_object_or_404(Event, pk=pk)
