@@ -16,9 +16,13 @@
     {% endblock %}
 </div>
 <div id="sidebar" style="background-color:#EEEEEE;height:1000px;width:180px;float:left;">
-    {% block sidebar %}<ul><li><a href="{% url 'User:user_list' %}">User Management</a></li></ul>
+        {% for u in adminusers %}
+    {% if user.username == u.username %}
+    <ul><li><a href="{% url 'User:user_list' %}">User Management</a></li></ul>
     <ul><li><a href="{% url 'event_list' %}">Event Management</a></li></ul>
-    <ul><li><a href="{% url 'user_view' %}">User View</a></li></ul>{% endblock %}
+    {% endif %}
+    {% endfor %}
+    <ul><li><a href="{% url 'user_view' %}">User View</a></li></ul>
 </div>
 <div id="content">
     {% block content %}
