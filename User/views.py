@@ -15,7 +15,8 @@ from .form import UserForm
 def user_list(request):
     users = Myuser.objects.all()
     adminusers = Myuser.objects.filter(role='admin')
-    return render(request, 'User/user_list.html', {'users':users,'adminusers':adminusers})
+    allusers = Myuser.objects.all()
+    return render(request, 'User/user_list.html', {'users':users,'adminusers':adminusers,'allusers':allusers})
 
 def user_new(request):
     if request.method == "POST":
@@ -95,4 +96,6 @@ def signup(request):
     else:
         form = UserForm()
         return render(request, 'User/user_edit2.html', {'form': form})
+
+
 
